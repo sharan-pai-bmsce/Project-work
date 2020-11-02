@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sign-up Template</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style(sign-up).css" />
+  </head>
+  <body>
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+      <div class="container">
+        <div class="card login-card ">
+          <div class="row no-gutters">
+            <div class="col-md-6">
+              <div class="card-body text-center">
+                <div class="" id="user-signin">
+                  <p class="login-card-description">Sign up for an account</p>
+                  <form action="#!" class="text-left" style="margin: auto">
+                    <div class="form-group">
+                      <label for="name" class="ml-2">Name<span style="color: red; margin-left: 1mm;">*</span></label>
+                      <input
+                        type="text"
+                        name="Name"
+                        id="name"
+                        class="form-control"
+                        placeholder="Name"
+                        required
+                        pattern="[a-z A-Z]{2,}"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="email" class="ml-2">E-mail<span style="color: red; margin-left: 1mm;">*</span></label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="E-mail"
+                        required
+                        pattern="[a-z0-9.]+@[a-z0-9.-]+\.[a-z]{2}"
+                      />
+                    </div>
+                    <div class="form-group mb-4">
+                      <label for="password" class="ml-2">Password<span style="color: red; margin-left: 1mm;">*</span></label>
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        placeholder="Enter the new password"
+                        required
+                        minlength="8"
+                        maxlength="15"
+                      />
+                    </div>
+                    <div class="form-group mb-4">
+                      <label for="password" class="ml-2">Password Verification<span style="color: red; margin-left: 1mm;">*</span></label>
+                      <input
+                        type="password"
+                        id="password-confirm"
+                        class="form-control"
+                        placeholder="Re-enter the new password"
+                        required
+                        minlength="8"
+                        maxlength="15"
+                      />
+                    </div>
+                    <input
+                      name="login"
+                      id="login"
+                      class="btn btn-block login-btn mb-4"
+                      type="submit"
+                      value="Sign-up"
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img src="list.png" style="
+              border-radius: 0;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+
+            ">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
