@@ -44,7 +44,7 @@ let loadUserLogin = ()=>{
     <!--<a href="#!" class="forgot-password-link">Forgot password?</a>-->
     <p class="login-card-footer-text">
       Don't have an account?
-      <a href="E://Java Script (projectwork)/sign-in page/index(sign-up).html" class="text-reset">Register here</a>
+      <a href="D://project-work/sign-in page/index(sign-up).html" class="text-reset">Register here</a>
     </p>`
     userBtn.style.backgroundColor="#fff";
     adminBtn.style.backgroundColor="#eee";
