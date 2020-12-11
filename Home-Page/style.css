@@ -1,0 +1,27 @@
+.announce-area {
+  /* max-height: 400px; */
+  background-color: white;
+}
+
+.announce-display {
+  /* max-height: 400px; */
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.img-display {
+  border-radius: 0;
+  position: absolute;
+  -o-object-fit: cover;
+  object-fit: contain;
+}
+@media (min-width: 1024px) {
+  .announce {
+    margin-left: 10px;
+    max-width: 24%;
+  }
+}
+
+.announce-img{
+  padding:0px;
+}

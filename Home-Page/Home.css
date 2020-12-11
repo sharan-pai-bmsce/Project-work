@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --navbar-hieght: 59px;
+}
+
+/* Styling of navbar */
+/*#navbar{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#navbar ul{
+     display: flex;
+     margin: 25px 10px;      /*List will be in line
+     font-family: 'Baloo Bhai 2', cursive;
+}
+#navbar::before{
+    content:"";
+    background-color: black;
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: -1;
+}
+/* Styling of list input 
+#navbar ul li{
+    list-style: none;   /*No bullets
+    font-size: 1.3rem;
+}
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#navbar ul li a:hover{
+    color:black;
+    background-color: white; 
+}
+#navbar ul li.active {
+    color:black;
+    background-color: white;
+}*/
+/* Home section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
+
+}
+#home::before{
+    content:"";
+    background: url('https://i.ytimg.com/vi/XOiAmZBCwN0/maxresdefault.jpg') no-repeat center center/cover; 
+    position: absolute;
+    width:100%;
+    height:99%;
+    z-index: -1;
+    opacity: 0.65;
+}
+#home h1{
+    color: black;
+    text-align: center;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+#home h2{
+    color: black;
+    text-align: center;
+    font-size: 2.8rem;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+.Title{
+    font-size: 3.8rem;
+    padding: 12px;
+
+}
+/* About Section */
+#detail{
+    margin: auto;
+    display: block;
+    /* display: flex; */
+    flex-direction: column;
+}
+#Title2{
+    margin-top: 50px;
+    margin-left: 315px;
+    font-size: 2.3rem;
+    padding: 12px;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+ .Para{
+    margin-left: 250px;
+    margin-right: 180px;
+    margin-bottom: 50px;
+    font-size: 1.8rem;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+/* Mission section */
+#mission{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#mission::before{
+    background: url('https://jessegrillo.com/wp-content/uploads/2018/02/marketing-consultant-1.jpeg') no-repeat center center/cover; 
+    opacity: 0.5;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 100%;
+
+}
+.Title3{
+    margin-top: 20px;
+    font-size: 2.3rem;
+    padding: 12px;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+.Para1{
+    margin-left: 350px;
+    margin-right: 300px;
+    font-size: 1.8rem;
+    font-family: 'Baloo Bhai 2', cursive;  
+}
+.list1{
+    margin-left: 350px;
+    margin-right: 300px;
+    font-size: 1.8rem;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
