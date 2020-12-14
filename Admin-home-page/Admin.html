@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <title>2020 ACADEMIC CONFERENCE</title>
+    <style>
+      .nav-link {
+        color: white !important;
+        padding-left: 10px !important;
+      }
+
+      .nav-item {
+        padding-right: 50px;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        z-index: 1030;
+        width: 100%;
+      }
+      .navigate {
+        position: fixed;
+        top: 105px;
+        width: 100%;
+      }
+      .firstSection {
+        margin-top: 180px;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: white">
+    <div class="header">
+      <div
+        class="navbar align-items-center pl-3 pr-3"
+        style="background-color: white"
+      >
+        <div class="col-3 pt-2">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/BMS_College_of_Engineering.svg/1200px-BMS_College_of_Engineering.svg.png"
+            width="100px"
+            height="100px"
+          />
+        </div>
+        <div class="col-6 text-center">
+          <h3 class="blog-header-logo text-dark pt-2">
+            2020 ACADEMIC CONFERENCE
+          </h3>
+        </div>
+        <div class="col-3 text-right">
+          <a href="#" class="btn btn-outline-secondary pt-2">Logout</a>
+        </div>
+      </div>
+      <div>
+        <nav
+          class="mt-3 navigate navbar navbar-expand-lg pt-2 pb-2 navbar-dark bg-dark"
+        >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a
+                  class="nav-link bg-danger pr-2 pl-2"
+                  style="border-radius: 2px"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Submissions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <section class="background firstSection">
+      <div class="box-main">
+        <div class="firstHalf">
+          <p class="text-big">2020 ACADEMIC CONFERENCE</p>
+          <p class="text-small" style="text-align: justify">
+            An efficient platform to share your ideas and widen your horizen.
+            This is your step towards the future!
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="container-1">
+      <section class="section">
+        <div class="paras">
+          <p class="sectionTag text-big">Spark New Ideas</p>
+          <p class="sectionSubTag text-small" style="text-align: justify">
+            Conferences are a great way for employees to be inspired by fresh
+            ideas, to start rethinking the status quo, and to hopefully leave
+            ready to tackle business challenges in creative and innovative ways.
+            Conferences also allow individuals to share their progress, hurdles
+            they’ve come across, and techniques devised for solving them. After
+            hearing from leading experts and visionaries on how they found
+            success, attendees are inspired and encouraged to think outside the
+            box, which leads to successful outcomes for the organization.
+          </p>
+        </div>
+        <div class="thumbnail">
+          <img
+            src="https://source.unsplash.com/900x900/?coding,apple"
+            alt="laptop image"
+            class="imgFluid"
+          />
+        </div>
+      </section>
+
+      <section class="section section-left" id="about">
+        <div class="paras">
+          <p class="sectionTag text-big">Learning</p>
+          <p class="sectionSubTag text-small" style="text-align: justify">
+            Another advantage of conferences is that they provide a blended
+            learning environment with multiple opportunities for individuals to
+            learn and engage in a wide array of formats. Conferences typically
+            provide special guest speakers, breakout sessions, one-on-one
+            engagements, group outings, and events for social interaction. The
+            learning facet of a conference can expose attendees to new ways of
+            operating and can help them discover ways to be even more
+            productive. Whichever way an individual learns best, there are
+            multiple ways to learn something new and impactful.
+          </p>
+        </div>
+        <div class="thumbnail">
+          <img
+            src="https://source.unsplash.com/900x900/?coding,apple,html"
+            alt="laptop image"
+            class="imgFluid"
+          />
+        </div>
+      </section>
+      <section class="section" id="services">
+        <div class="paras">
+          <p class="sectionTag text-big">Let's Grow Together</p>
+          <p class="sectionSubTag text-small" style="text-align: justify">
+            The role of a conference is to gather like-minded individuals from
+            across the country or across the globe, to learn, discuss thoughts,
+            network, share ideas, create new ideas, and to ignite motivation.
+            The benefits of attending a conference are different for everyone.
+          </p>
+        </div>
+        <div class="thumbnail">
+          <img
+            src="https://source.unsplash.com/900x900/?javascript,apple"
+            alt="laptop image"
+            class="imgFluid"
+          />
+        </div>
+      </section>
+
+      <section class="news container" id="news">
+        <h1 class="text-center">News And Announcement</h1>
+        <form id="form">
+          <div class="form-group">
+            <label for="heading" class="pl-1"><h5>Title:</h5></label>
+            <input type="text" class="form-control" name="heading" id="name" />
+          </div>
+          <div class="form-group">
+            <label for="heading" class="pl-1"
+              ><h5>Last Date Of Submission:</h5></label
+            >
+            <input
+              type="date"
+              class="form-control"
+              name="lastDateOfSubmission"
+              id="lastDateOfSubmission"
+            />
+          </div>
+          <div class="form-group">
+            <label for="heading" class="pl-1"><h5>Conference Date:</h5></label>
+            <input
+              type="date"
+              class="form-control"
+              name="conferenceDate"
+              id="conferenceDate"
+            />
+          </div>
+          <div class="form-row">
+            <label for="heading" class="pl-1"><h5>Summary:</h5></label>
+            <textarea
+              class="form-control"
+              style="min-height: 150px"
+              name="update"
+              id="summary"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="heading" class="pl-1"><h5>Link for image:</h5></label>
+            <input type="text" class="form-control" name="imgLink" id="img-link" />
+          </div>
+          <div class="text-center">
+            <input type="submit" class="btn btn-dark" style="margin: auto; width: 50%;" id="submit" value="submit">
+          </div>
+        </form>
+      </section>
+      <div class="container">
+        <table id="announcements-list" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="table">
+            <thead class="text-center">
+                <td><h5>ID</h5></td>
+                <td><h5>Title</h5></td>
+                <td><h5>Last Date of Submission</h5></td>
+                <td><h5>Conference Date</h5></td>
+                <td><h5>Cancel</h5></td>
+            </thead>
+          
+          <tbody class="text-center" style="font-size: large;" id="book-list">
+                
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:400px;"></div>
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+      ></script>
+      <script src="main-form.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"
+      ></script>
+    </div>
+  </body>
+</html>
