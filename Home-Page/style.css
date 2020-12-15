@@ -25,3 +25,13 @@
 .announce-img{
   padding:0px;
 }
+
+#announce-title{
+  text-transform: capitalize;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#announce-summary{
+  text-align: justify;
+  
+}

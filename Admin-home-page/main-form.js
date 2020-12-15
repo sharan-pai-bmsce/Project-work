@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", (e) => {
+  removingUpdateOnDates();
   updateList();
 });
 class store {
@@ -14,20 +15,42 @@ class store {
   static addNews(news1) {
     const news = store.getUpdates();
     news.push(news1);
+    let name = news1.name.toLowerCase();
+    localStorage.setItem(`${name}`,JSON.stringify([]));
+    console.log(name);
     console.log(news);
     localStorage.setItem("news", JSON.stringify(news));
+    console.log(localStorage);
   }
   static removeElement(id) {
     let news = store.getUpdates();
     news.forEach((ele, index) => {
       if (ele.id === id) {
+        let name = ele.name.toLowerCase();
+        localStorage.removeItem(`${name}`);
         news.splice(index, 1);
       }
     });
-    //console.log(news);
     localStorage.setItem("news", JSON.stringify(news));
+    console.log(localStorage);
   }
 }
+
+
+let removingUpdateOnDates = ()=>{
+  let d1 = new Date();
+  d1 = `${d1.getFullYear()}-${d1.getMonth()+1}-${d1.getDate()+9}`;
+  let news = store.getUpdates();
+  console.log(d1);
+  news.forEach(element=>{
+    console.log(element);
+    if(element.conferenceDate===d1){
+      console.log(element);
+      store.removeElement(element.id);
+    }
+  });
+}
+//localStorage.setItem("news",JSON.stringify([]));
 //store.removeNews();
 document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -66,15 +89,6 @@ document.getElementById("form").addEventListener("submit", (e) => {
 
 let date = new Date();
 //javascript counts months from 0 to 11 so for december we will get 11.
-console.log(
-  "date:" +
-    date.getDate() +
-    "/" +
-    (date.getUTCMonth() + 1) +
-    "/" +
-    date.getFullYear()
-);
-
 let updateList = () => {
   let news = store.getUpdates();
 

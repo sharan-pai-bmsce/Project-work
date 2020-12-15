@@ -76,11 +76,11 @@ html{
 } 
 
 /* Clients Section */
-#update-section{ 
+/* #update-section{ 
     position: relative;
-}
+} */
 
-#update-section::before{
+/* #update-section::before{
  content: "";
  position: absolute;
  background: url('../bg.jpg');
@@ -88,13 +88,13 @@ html{
  height: 100%;
  z-index: -1;
  opacity: 0.3;
-}
+} */
 
-#update{
+/* #update{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 
 
