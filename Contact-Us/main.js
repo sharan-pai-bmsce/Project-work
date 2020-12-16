@@ -13,15 +13,6 @@ class Store{
         contact.push(news1);
         localStorage.setItem('contact',JSON.stringify(contact));
     }
-    static removeUpdate(element){
-        let contact = Store.getUpdate();
-        contact.forEach((ele,index)=>{
-            if(ele.email===element.email){
-                contact.splice(index,1);
-            }
-        });
-        localStorage.setItem('contact',JSON.stringify(contact));
-    }
     static removeAll(){
         localStorage.setItem('contact',JSON.stringify([]));
     }
@@ -35,7 +26,9 @@ document.getElementById('contact-form').addEventListener('submit',(e)=>{
     let message = document.getElementById('message');
 
     if(name.value!==""&&email.value!==""&&subject.value!==""&&message.value!==""){
+        let id = Store.getUpdate().length+1;
         let contact = {
+            id:id,
             name:name.value,
             email:email.value,
             subject:subject.value,

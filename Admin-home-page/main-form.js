@@ -117,9 +117,11 @@ let updateList = () => {
 
 document.getElementById("book-list").addEventListener("click", (e) => {
   e.preventDefault();
-  let element = e.target.parentElement.parentElement;
-  let id = JSON.parse(element.children[0].innerText);
-  console.log(id);
-  store.removeElement(id);
-  element.remove();
+  if(e.target.classList.contains('delete-btn')){
+    let element = e.target.parentElement.parentElement;
+    let id = JSON.parse(element.children[0].innerText);
+    console.log(id);
+    store.removeElement(id);
+    element.remove();
+  }
 });
