@@ -28,7 +28,8 @@
               <div class="card-body text-center">
                 <div class="" id="user-signin">
                   <p class="login-card-description">Sign up for an account</p>
-                  <form action="#!" class="text-left" style="margin: auto">
+                  <div id="msg"></div>
+                  <form action="#!" class="text-left" style="margin: auto" id="user-form">
                     <div class="form-group">
                       <label for="name" class="ml-2">Name<span style="color: red; margin-left: 1mm;">*</span></label>
                       <input
@@ -37,6 +38,7 @@
                         id="name"
                         class="form-control"
                         placeholder="Name"
+                        value=""
                         required
                         pattern="[a-z A-Z]{2,}"
                       />
@@ -50,7 +52,6 @@
                         class="form-control"
                         placeholder="E-mail"
                         required
-                        pattern="[a-z0-9.]+@[a-z0-9.-]+\.[a-z]{2}"
                       />
                     </div>
                     <div class="form-group mb-4">
@@ -102,6 +103,7 @@
         </div>
       </div>
     </main>
+    <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
