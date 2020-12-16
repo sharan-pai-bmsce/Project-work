@@ -146,16 +146,17 @@ Phone: 080 12345678
     </div>
     
     <div class="floatleft2">
-    <form  action="/self">
+      <div id="msg-div"></div>
+    <form id="contact-form" action="">
   
   <pre style="font-size:130%"><input type="text" id="name" name="name" size="25" required> <label for="name">  Your Name*</label><br><br></pre>
                                                                      
   <pre style="font-size:130%"><label for="email">Your Email*</label>   <input type="email" id="email" name="email" size="44" required><br><br></pre>
   
-  <pre style="font-size:120%"><label for="subject">Subject </label><br><input type="text" id="subject" name="subject" size="59"><br></pre>
+  <pre style="font-size:120%"><label for="subject">Subject* </label><br><input type="text" id="subject" name="subject" size="59"><br></pre>
   
   <p style="font-size:135%">Message*</p>
-  <textarea name="message" rows="4" cols="92">
+  <textarea name="message" id = "message" rows="4" cols="92">
 </textarea>
  
   <div style="text-align: center;"><br><input type="submit" value="Submit"></div>
@@ -171,6 +172,7 @@ Phone: 080 12345678
     <div style="clear: both;"></div>
 </div>
      <div style="margin-bottom: 50px;"></div> 
+     <script src="main.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

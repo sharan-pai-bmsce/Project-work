@@ -16,7 +16,7 @@ class store {
     const news = store.getUpdates();
     news.push(news1);
     let name = news1.name.toLowerCase();
-    localStorage.setItem(`${name}`,JSON.stringify([]));
+    localStorage.setItem(`${name}`, JSON.stringify([]));
     console.log(name);
     console.log(news);
     localStorage.setItem("news", JSON.stringify(news));
@@ -36,20 +36,19 @@ class store {
   }
 }
 
-
-let removingUpdateOnDates = ()=>{
+let removingUpdateOnDates = () => {
   let d1 = new Date();
-  d1 = `${d1.getFullYear()}-${d1.getMonth()+1}-${d1.getDate()+9}`;
+  d1 = `${d1.getFullYear()}-${d1.getMonth() + 1}-${d1.getDate() + 9}`;
   let news = store.getUpdates();
   console.log(d1);
-  news.forEach(element=>{
+  news.forEach((element) => {
     console.log(element);
-    if(element.conferenceDate===d1){
+    if (element.conferenceDate === d1) {
       console.log(element);
       store.removeElement(element.id);
     }
   });
-}
+};
 //localStorage.setItem("news",JSON.stringify([]));
 //store.removeNews();
 document.getElementById("form").addEventListener("submit", (e) => {
@@ -78,12 +77,27 @@ document.getElementById("form").addEventListener("submit", (e) => {
     };
     store.addNews(news);
     updateList();
-    id.value =""; 
-    name.value = "" ;
+    id.value = "";
+    name.value = "";
     lastDateOfSubmission.value = "";
     conferenceDate.value = "";
     summary.value = "";
-    imgLink.value = "";    
+    imgLink.value = "";
+    let msg = document.getElementById("msg-div");
+    msg.innerHTML = `<h6>New Conference has been updated.</h6>`;
+    msg.classList = "alert alert-success text-center";
+    setTimeout(() => {
+      msg.innerHTML = "";
+      msg.classList = "";
+    }, 5000);
+  } else {
+    let msg = document.getElementById("msg-div");
+    msg.innerHTML = `<h6>Kindly enter all fields to post</h6>`;
+    msg.classList = "alert alert-danger text-center";
+    setTimeout(() => {
+      msg.innerHTML = "";
+      msg.classList = "";
+    }, 5000);
   }
 });
 
