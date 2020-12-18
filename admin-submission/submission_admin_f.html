@@ -92,39 +92,24 @@
         </nav>
       </div>
     </div>
-    <div class="container">
-      <style>* { font: 18px Calibri; } 
-        table { width: 100%; }
-        table, th, td { border: solid 1px #DDD;background-color: black;  
-            border-collapse: collapse; padding: 2px 3px; text-align: center;
-            color:white;
-        }
-</style>
-</head>
-<body>
-<script>
-    var arrHead = new Array();	// array for header.
-    arrHead = ['', 'Name', 'Email Address', 'Mobile no.','Paper Title','Abstract'];
+        <div class="tablem container">
+        <table id="Contact-Us Responses" style= "font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="table">
+            <thead class="text-center">
+                <td><h5>Name</h5></td>
+                <td><h5>Email Address</h5></td>
+                <td><h5>Mobile no.</h5></td>
+                <td><h5>Paper title</h5></td>
+<td><h5>Abstract</h5></td>
 
-    
-    function createTable() {
-        var empTable = document.createElement('table');
-        empTable.setAttribute('id', 'empTable'); // table id.
 
-        var tr = empTable.insertRow(-1);
-        for (var h = 0; h < arrHead.length; h++) {
-            var th = document.createElement('th'); // create table headers
-            th.innerHTML = arrHead[h];
-            tr.appendChild(th);
-        }
+            </thead>
 
-        var div = document.getElementById('cont');
-        div.appendChild(empTable);  // add the TABLE to the container.
-    }
+          <tbody class="text-center" style="font-size: large;" id="Contact-Us Responses">
 
-   
-</table>
-</script>
+            </tbody>
+        </table>
+    </div>
+
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

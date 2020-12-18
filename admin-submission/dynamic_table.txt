@@ -1,0 +1,24 @@
+<script>
+    var arrHead = new Array();	// array for header.
+    arrHead = ['', 'Name', 'Email Address', 'Mobile no.','Paper Title','Abstract'];
+
+    
+    function createTable() {
+        var empTable = document.createElement('table');
+        empTable.setAttribute('id', 'empTable'); // table id.
+
+        var tr = empTable.insertRow(-1);
+        for (var h = 0; h < arrHead.length; h++) {
+            var th = document.createElement('th'); // create table headers
+            th.innerHTML = arrHead[h];
+            tr.appendChild(th);
+        }
+
+        var div = document.getElementById('cont');
+        div.appendChild(empTable);  // add the TABLE to the container.
+    }
+
+   
+</table>
+</script>
+    
