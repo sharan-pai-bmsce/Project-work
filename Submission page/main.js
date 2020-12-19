@@ -28,6 +28,7 @@ class Store{
 
     static removeAll(){
         localStorage.removeItem('environment conference');
+        localStorage.removeItem('energy conference');
     } 
 }
 Store.removeAll();
@@ -79,7 +80,6 @@ document.getElementById('submission-form').addEventListener('submit',(e)=>{
             div.innerHTML = ``;
             div.classList = '';
         },10000);
-        //console.log(submission);
     }else{
         let div = document.getElementById('msg-div');
         div.innerHTML = `<h5>Conference name does not match any of ongoing Conferences.<br><p class="text-left">Available Confereces:<p></h5>`;
@@ -97,6 +97,5 @@ document.getElementById('submission-form').addEventListener('submit',(e)=>{
             div.innerHTML = ``;
             div.classList = '';
         },10000);
-        //console.log('world')
     }
 });

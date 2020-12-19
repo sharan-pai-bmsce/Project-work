@@ -80,6 +80,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     imgLink.value = "";
     let msg = document.getElementById("msg-div");
     msg.innerHTML = `<h6>New Conference has been updated.</h6>`;
+    window.scrollBy(0,-600);
     msg.classList = "alert alert-success text-center";
     setTimeout(() => {
       msg.innerHTML = "";
@@ -88,6 +89,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
   } else {
     let msg = document.getElementById("msg-div");
     msg.innerHTML = `<h6>Kindly enter all fields to post</h6>`;
+    window.scrollBy(0,-600);
     msg.classList = "alert alert-danger text-center";
     setTimeout(() => {
       msg.innerHTML = "";
