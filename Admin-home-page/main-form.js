@@ -15,9 +15,6 @@ class store {
   static addNews(news1) {
     const news = store.getUpdates();
     news.push(news1);
-    let name = news1.name.toLowerCase();
-    localStorage.setItem(`${name}`, JSON.stringify([]));
-    console.log(name);
     console.log(news);
     localStorage.setItem("news", JSON.stringify(news));
     console.log(localStorage);
@@ -27,7 +24,6 @@ class store {
     news.forEach((ele, index) => {
       if (ele.id === id) {
         let name = ele.name.toLowerCase();
-        localStorage.removeItem(`${name}`);
         news.splice(index, 1);
       }
     });
@@ -49,8 +45,7 @@ let removingUpdateOnDates = () => {
     }
   });
 };
-//localStorage.setItem("news",JSON.stringify([]));
-//store.removeNews();
+
 document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
   let id = store.getUpdates().length + 1;
