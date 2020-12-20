@@ -13,15 +13,6 @@ class Store{
         contact.push(news1);
         localStorage.setItem('contact',JSON.stringify(contact));
     }
-    static removeUpdate(element){
-        let contact = Store.getUpdate();
-        contact.forEach((ele,index)=>{
-            if(ele.email===element.email){
-                contact.splice(index,1);
-            }
-        });
-        localStorage.setItem('contact',JSON.stringify(contact));
-    }
     static removeAll(){
         localStorage.setItem('contact',JSON.stringify([]));
     }
@@ -35,7 +26,9 @@ document.getElementById('contact-form').addEventListener('submit',(e)=>{
     let message = document.getElementById('message');
 
     if(name.value!==""&&email.value!==""&&subject.value!==""&&message.value!==""){
+        let id = Store.getUpdate().length+1;
         let contact = {
+            id:id,
             name:name.value,
             email:email.value,
             subject:subject.value,
@@ -49,6 +42,7 @@ document.getElementById('contact-form').addEventListener('submit',(e)=>{
         message.value = "";
         let msg = document.getElementById('msg-div');
         msg.innerHTML = `Message has been sent. It will be handled within 2-3 days`;
+        window.scrollTo(0,0);
         msg.classList = "alert alert-success text-center";
         setTimeout(()=>{
             msg.innerHTML = "";
@@ -56,8 +50,9 @@ document.getElementById('contact-form').addEventListener('submit',(e)=>{
         },5000);
     }else{
         let msg = document.getElementById('msg-div');
-        msg.innerHTML = `Kindly enter all fields to send`;
-        msg.classList = "alert alert-danger";
+        msg.innerHTML = `Kindly enter message field to send`;
+        window.scrollTo(0,0);
+        msg.classList = "alert alert-danger text-center";
         setTimeout(()=>{
             msg.innerHTML = "";
             msg.classList = "";
