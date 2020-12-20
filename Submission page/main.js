@@ -31,7 +31,7 @@ class Store{
         localStorage.removeItem('energy conference');
     } 
 }
-//Store.removeAll();
+Store.removeAll();
 document.getElementById('submission-form').addEventListener('submit',(e)=>{
     e.preventDefault();
     let prefix = document.getElementById('prefix-input');
