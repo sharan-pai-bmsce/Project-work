@@ -8,8 +8,11 @@ class Store{
         }
         return userInfo;
     }
+    static deleteAll(){
+        localStorage.setItem('userInfo',JSON.stringify([]));
+    }
 }
-
+// Store.deleteAll();
 document.getElementById('form').addEventListener('submit',(e)=>{
     e.preventDefault();
     let userBtn = document.getElementById('user-btn');

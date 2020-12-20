@@ -24,9 +24,10 @@ class store {
     news.forEach((ele, index) => {
       if (ele.id === id) {
         //let name = ele.name.toLowerCase();
+        store.removeSubmissions(ele.name);
         news.splice(index, 1);
-        for(let i=index;i<news.length;i++){
-          news[i].id = index+1;
+        for (let i = index; i < news.length; i++) {
+          news[i].id = index + 1;
           //document.getElementById('id-event').innerHTML = JSON.stringify(news[i].id);
         }
       }
@@ -34,28 +35,34 @@ class store {
     localStorage.setItem("news", JSON.stringify(news));
     console.log(localStorage);
   }
-  static updateModal(id){
+
+  static removeSubmissions(name){
+    localStorage.removeItem(`${name}`);
+  }
+
+  static updateModal(id) {
     let news = store.getUpdates();
-    news.forEach((ele)=>{
-      if(ele.id===id){
-        document.getElementById('id-edit').value = ele.id;
-        document.getElementById('name-edit').value = ele.name;
-        document.getElementById('sub-date-edit').value = ele.lastDateOfSubmission;
-        document.getElementById('conf-date-edit').value = ele.conferenceDate;
-        document.getElementById('summary-edit').value = ele.summary;
-        document.getElementById('img-link-edit').value = ele.imgLink;
+    news.forEach((ele) => {
+      if (ele.id === id) {
+        document.getElementById("id-edit").value = ele.id;
+        document.getElementById("name-edit").value = ele.name;
+        document.getElementById("sub-date-edit").value =
+          ele.lastDateOfSubmission;
+        document.getElementById("conf-date-edit").value = ele.conferenceDate;
+        document.getElementById("summary-edit").value = ele.summary;
+        document.getElementById("img-link-edit").value = ele.imgLink;
       }
     });
   }
 
-  static editElement(id){
+  static editElement(id) {
     let news = store.getUpdates();
-    news.forEach((ele)=>{
-      if(ele.id===id){
-        let subDate = document.getElementById('sub-date-edit').value;
-        let confDate = document.getElementById('conf-date-edit').value;
-        let summary = document.getElementById('summary-edit').value;
-        let imgLink = document.getElementById('img-link-edit').value;
+    news.forEach((ele) => {
+      if (ele.id === id) {
+        let subDate = document.getElementById("sub-date-edit").value;
+        let confDate = document.getElementById("conf-date-edit").value;
+        let summary = document.getElementById("summary-edit").value;
+        let imgLink = document.getElementById("img-link-edit").value;
         ele.lastDateOfSubmission = subDate;
         ele.conferenceDate = confDate;
         ele.summary = summary;
@@ -63,13 +70,17 @@ class store {
         console.log(news);
       }
     });
-    localStorage.setItem('news',JSON.stringify(news));
+    localStorage.setItem("news", JSON.stringify(news));
+  }
+
+  static deleteAll() {
+    localStorage.setItem("news", JSON.stringify([]));
   }
 }
-
+//store.deleteAll();
 let removingUpdateOnDates = () => {
   let d1 = new Date();
-  d1 = `${d1.getFullYear()}-${d1.getMonth() + 1}-${d1.getDate()+2}`;
+  d1 = `${d1.getFullYear()}-${d1.getMonth() + 1}-${d1.getDate() + 2}`;
   let news = store.getUpdates();
   console.log(d1);
   news.forEach((element) => {
@@ -115,7 +126,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     imgLink.value = "";
     let msg = document.getElementById("msg-div");
     msg.innerHTML = `<h6>New Conference has been updated.</h6>`;
-    window.scrollBy(0,-600);
+    window.scrollBy(0, -600);
     msg.classList = "alert alert-success text-center";
     setTimeout(() => {
       msg.innerHTML = "";
@@ -124,7 +135,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
   } else {
     let msg = document.getElementById("msg-div");
     msg.innerHTML = `<h6>Kindly enter all fields to post</h6>`;
-    window.scrollBy(0,-600);
+    window.scrollBy(0, -600);
     msg.classList = "alert alert-danger text-center";
     setTimeout(() => {
       msg.innerHTML = "";
@@ -150,7 +161,7 @@ let updateList = () => {
 
 document.getElementById("book-list").addEventListener("click", (e) => {
   e.preventDefault();
-  if(e.target.classList.contains('delete-btn')){
+  if (e.target.classList.contains("delete-btn")) {
     let element = e.target.parentElement.parentElement;
     let id = JSON.parse(element.children[0].innerText);
     console.log(id);
@@ -163,17 +174,17 @@ document.getElementById("book-list").addEventListener("click", (e) => {
 
 document.getElementById("book-list").addEventListener("click", (e) => {
   e.preventDefault();
-  if(e.target.classList.contains('edit-btn')){
+  if (e.target.classList.contains("edit-btn")) {
     let element = e.target.parentElement.parentElement;
     let id = JSON.parse(element.children[0].innerText);
     store.updateModal(id);
   }
 });
 
-document.getElementById('save-changes').addEventListener('click',(e)=>{
-    e.preventDefault();
-    let id = JSON.parse(document.getElementById('id-edit').value);
-    //console.log(id);
-    store.editElement(id);
-    updateList();
+document.getElementById("save-changes").addEventListener("click", (e) => {
+  e.preventDefault();
+  let id = JSON.parse(document.getElementById("id-edit").value);
+  //console.log(id);
+  store.editElement(id);
+  updateList();
 });
