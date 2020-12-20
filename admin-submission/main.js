@@ -43,8 +43,9 @@ let displayTable = ()=>{
         head.classList = 'text-center';
         table.classList = 'table table-striped';
         table.style =`font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,sans-serif; border:1px solid #444`;
-        div.style = 'border: 1px solid #111;';
-        row.innerHTML = `<th><h5>Name</h5></th>
+        div.style = 'border: 1px solid #111;border-radius:.5rem;';
+        row.innerHTML = `<th><h5>Id</h5></th>
+        <th><h5>Name</h5></th>
         <th><h5>Email Address</h5></th>
         <th><h5>Mobile no.</h5></th>
         <th><h5>Paper title</h5></th>
@@ -56,7 +57,8 @@ let displayTable = ()=>{
         tbody.classList = 'text-center';
         submission.forEach((ele)=>{
             let row = document.createElement('tr');
-            row.innerHTML = `<td><h5>${ele.name}</h5></td>
+            row.innerHTML = `<td><h5>${ele.id}</h5></td>
+            <td><h5>${ele.name}</h5></td>
             <td><h5>${ele.email}</h5></td>
             <td><h5>${ele.mobile}</h5></td>
             <td><h5>${ele.paperTitle}</h5></td>

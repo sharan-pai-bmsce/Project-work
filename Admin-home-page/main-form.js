@@ -34,7 +34,7 @@ class store {
 
 let removingUpdateOnDates = () => {
   let d1 = new Date();
-  d1 = `${d1.getFullYear()}-${d1.getMonth() + 1}-${d1.getDate() + 9}`;
+  d1 = `${d1.getFullYear()}-${d1.getMonth() + 1}-${d1.getDate()+2}`;
   let news = store.getUpdates();
   console.log(d1);
   news.forEach((element) => {
@@ -102,7 +102,6 @@ let date = new Date();
 //javascript counts months from 0 to 11 so for december we will get 11.
 let updateList = () => {
   let news = store.getUpdates();
-
   let announcesection = document.getElementById("book-list");
   announcesection.innerHTML = "";
   news.forEach((element) => {
