@@ -29,8 +29,13 @@ class Store{
         localStorage.setItem(`${name}`,JSON.stringify(submissions));
         console.log(localStorage);
     }
-}
 
+    static removeSubmission(){
+        localStorage.removeItem('environment conference');
+        localStorage.removeItem('political conference');
+    }
+}
+//Store.removeSubmission();
 let displayTable = ()=>{
     let news = Store.getNews();
     let subTable = document.getElementById('submission-container');
