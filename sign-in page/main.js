@@ -42,7 +42,7 @@ document.getElementById('user-form').addEventListener('submit',(e)=>{
     }else{
         let msg = document.getElementById('msg');
         msg.classList = 'alert alert-danger';
-        msg.innerHTML = `<h6>Password and Password is not the same</h6>`;
+        msg.innerHTML = `<h6>Password and Password Verification is not the same</h6>`;
         setTimeout(()=>{
             msg.innerHTML = '';
             msg.classList = '';

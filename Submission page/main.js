@@ -31,7 +31,23 @@ class Store{
         localStorage.removeItem('energy conference');
     } 
 }
-Store.removeAll();
+//Store.removeAll();
+let updateEvent = ()=>{
+    let link = JSON.parse(localStorage.getItem('link'));
+    console.log(link);
+    let conference=document.getElementById('conference-name-input');
+    if(link!=null){
+        link = link.charAt(0).toUpperCase()+link.substring(1);
+        conference.value = link;
+        //conference.disabled = true;
+        localStorage.removeItem('link');
+    }
+}
+
+window.addEventListener('DOMContentLoaded',(e)=>{
+    updateEvent();
+})
+
 document.getElementById('submission-form').addEventListener('submit',(e)=>{
     e.preventDefault();
     let prefix = document.getElementById('prefix-input');

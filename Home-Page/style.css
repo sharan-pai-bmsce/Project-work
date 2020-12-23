@@ -12,8 +12,9 @@
 .img-display {
   border-radius: 0;
   position: absolute;
-  -o-object-fit: cover;
-  object-fit: contain;
+  /* -o-object-fit: cover;
+  object-fit: cover; */
+  width: 100%;
 }
 @media (min-width: 1024px) {
   .announce {
@@ -34,4 +35,9 @@
 #announce-summary{
   text-align: justify;
   
+}
+
+#link-sub{
+  float: right;
+  padding-top: 170px ;
 }

@@ -80,12 +80,12 @@ class store {
 //store.deleteAll();
 let removingUpdateOnDates = () => {
   let d1 = new Date();
-  d1 = `${d1.getFullYear()}-${d1.getMonth() + 1}-${d1.getDate() + 2}`;
+  d1 = `${d1.getFullYear()}-${d1.getMonth() + 1}-${d1.getDate()-1}`;
   let news = store.getUpdates();
   console.log(d1);
   news.forEach((element) => {
     console.log(element);
-    if (element.conferenceDate === d1) {
+    if (new Date(element.conferenceDate) < new Date(d1)) {
       console.log(element);
       store.removeElement(element.id);
     }
@@ -108,30 +108,46 @@ document.getElementById("form").addEventListener("submit", (e) => {
     summary.value !== "" &&
     imgLink.value !== ""
   ) {
-    let news = {
-      id: id,
-      name: name.value,
-      lastDateOfSubmission: lastDateOfSubmission.value,
-      conferenceDate: conferenceDate.value,
-      summary: summary.value,
-      imgLink: imgLink.value,
-    };
-    store.addNews(news);
-    updateList();
-    id.value = "";
-    name.value = "";
-    lastDateOfSubmission.value = "";
-    conferenceDate.value = "";
-    summary.value = "";
-    imgLink.value = "";
-    let msg = document.getElementById("msg-div");
-    msg.innerHTML = `<h6>New Conference has been updated.</h6>`;
-    window.scrollBy(0, -600);
-    msg.classList = "alert alert-success text-center";
-    setTimeout(() => {
-      msg.innerHTML = "";
-      msg.classList = "";
-    }, 5000);
+    //console.log(new Date(lastDateOfSubmission.value));
+    //console.log(new Date(conferenceDate.value));
+    if(new Date(lastDateOfSubmission.value)<=new Date(conferenceDate.value)){
+      //console.log("hello");
+      let news = {
+        id: id,
+        name: name.value,
+        lastDateOfSubmission: lastDateOfSubmission.value,
+        conferenceDate: conferenceDate.value,
+        summary: summary.value,
+        imgLink: imgLink.value,
+      };
+      store.addNews(news);
+      removingUpdateOnDates();
+      id.value = "";
+      name.value = "";
+      lastDateOfSubmission.value = "";
+      conferenceDate.value = "";
+      summary.value = "";
+      imgLink.value = "";
+      updateList();
+      let msg = document.getElementById("msg-div");
+      msg.innerHTML = `<h6>New Conference has been updated.</h6>`;
+      window.scrollBy(0, -600);
+      msg.classList = "alert alert-success text-center";
+      setTimeout(() => {
+        msg.innerHTML = "";
+        msg.classList = "";
+      }, 5000);
+    }else{
+      let msg = document.getElementById("msg-div");
+      msg.innerHTML = `<h6>Date of submission is after Date of conference</h6>`;
+      window.scrollBy(0, -600);
+      msg.classList = "alert alert-danger text-center";
+      setTimeout(() => {
+        msg.innerHTML = "";
+        msg.classList = "";
+      }, 5000);
+    }
+
   } else {
     let msg = document.getElementById("msg-div");
     msg.innerHTML = `<h6>Kindly enter all fields to post</h6>`;
